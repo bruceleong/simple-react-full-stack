@@ -1,8 +1,96 @@
-h1 {
-  color: green;
+html {
+  margin: .5rem;
 }
 
 body {
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100vh;
+  /* background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../public/img/hero.jpg); */
+  background-size: cover;
+  background-position: top;
+}
+
+header {
+  margin-top: 1rem;
   text-align: center;
-  margin: auto;
+  background-image: linear-gradient(to right, grey, blue);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 2rem;
+  position: relative;
+}
+
+.saved-location-image {
+  height: 7rem;
+  width: auto;
+  margin-top: 2rem;
+}
+
+.currentweather-image {
+  height: 12rem;
+  width: auto;
+  margin-top: 2rem;
+}
+
+button {
+  background-color: rgb(51, 50, 50);
+  color: white;
+  border-radius: 10px;
+  font-size: 1.1rem;
+}
+
+input {
+  text-align: center;
+  border-radius: 10px;
+  font-size: 1.1rem;
+}
+
+.search-component {
+  text-align: center;
+  color: rgb(10, 2, 2);
+  font-size: 1rem;
+}
+
+.feature-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.feature {
+  background-image: linear-gradient(to right bottom, lightblue, #5643fa);
+  margin-top: 22rem;
+  padding-top: 2px;
+  background-color: lightblue;
+  font-size: .75rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 1.5rem 4rem grey;
+  transition: transform .3s;
+  color: black;
+  height: 20rem;
+  width: 16rem;
+}
+
+.feature:hover {
+  transform: translateY(-1.5rem) scale(1.03);
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.currentweather-card-container {
+  position: relative;
+}
+
+.currentweather-card {
+  display: flex;
+  width: 40rem;
+  position: fixed;
+  justify-content: space-evenly;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
 }
