@@ -5,7 +5,7 @@
   "main": "src/server/index.js",
   "scripts": {
     "start": "node src/server/index.js",
-    "build": "webpack --mode production",
+    "postinstall": "webpack -p",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon src/server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\""
@@ -36,6 +36,7 @@
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
     "nodemon": "^1.17.3",
+    "papaparse": "^4.6.0",
     "style-loader": "^0.22.0",
     "url-loader": "^1.0.1",
     "volleyball": "^1.5.1",

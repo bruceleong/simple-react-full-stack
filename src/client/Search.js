@@ -25,6 +25,9 @@ export default class Search extends Component {
     //seeding small amounts of data
     this.getPun()
     this.setState({ savedLocations: [nyData, portlandData, sanMateoData] })
+    axios.get('/api/csv')
+      // .then(res => res.data)
+      .then(data => console.log(data, 'current json'))
   }
 
   getPun = () => {

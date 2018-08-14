@@ -6,6 +6,8 @@ const axios = require('axios');
 const { temp } = require('./utils')
 const { timeAndDateConverter } = require('./utils')
 const { timeConverter } = require('./utils')
+const fs = require('fs')
+const Papa = require('papaparse')
 
 const app = express();
 app.use(volleyball);
@@ -13,9 +15,19 @@ app.use(volleyball);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static('dist'));
+app.use(express.static(__dirname));
 
-app.get('/api/getUsername', (req, res) => res.send({ username: os.userInfo().username }));
+//simple get route for the csv file
+app.get('/api/csv', (req, res, next) => {
+  console.log('are you in this route?')
+  //use fs.readFile to parse the csv file
+  fs.readFile('./sample.csv', (err, data) => {
+    if (err) next(err)
+    //using papaparse to convert the contents of the csv file into json
+    //and then sending the resulting json back to the client
+    else res.json(Papa.parse(data.toString()).data)
+  })
+})
 
 app.get('/api/stuff', (req, res, next) => {
   console.log('hitting the proper route')
